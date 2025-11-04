@@ -7,8 +7,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
-@EnableJpaRepositories(basePackages = "com.jasper.learn.domain.repository")
-@EntityScan(basePackages = "com.example.myapp.domain.entity")
+@EnableJpaRepositories(basePackages = "com.jasper.learn.adapter.repository")
+@EntityScan(basePackages = "com.jasper.learn.domain.entity")
 @EnableTransactionManagement
 public class DatabaseConfig {
 }

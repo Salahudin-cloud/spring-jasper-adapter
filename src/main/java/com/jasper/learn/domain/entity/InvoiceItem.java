@@ -25,10 +25,4 @@ public class InvoiceItem extends BaseEntity{
     @Column(nullable = false)
     private Integer quantity;
 
-    @Transient
-    public BigDecimal getSubtotal() {
-        if (product == null || product.getPrice() == null || quantity == null)
-            return BigDecimal.ZERO;
-        return product.getPrice().multiply(BigDecimal.valueOf(quantity));
-    }
 }

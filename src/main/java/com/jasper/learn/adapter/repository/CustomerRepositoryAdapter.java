@@ -3,11 +3,11 @@ package com.jasper.learn.adapter.repository;
 import com.jasper.learn.domain.entity.Customer;
 import com.jasper.learn.domain.repository.CustomerRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
-@Component
+@Repository
 @RequiredArgsConstructor
 public class CustomerRepositoryAdapter implements CustomerRepository {
 

@@ -1,0 +1,1 @@
+INSERT INTO customers (name, address, phone) VALUES ('PT Nusantara Medika', 'Jl. Sudirman No. 88, Jakarta', '021-9876543'), ('CV Sehat Sentosa', 'Jl. Ahmad Yani No. 23, Bandung', '022-4567890'), ('Klinik Prima Husada', 'Jl. Diponegoro No. 12, Surabaya', '031-2345678');

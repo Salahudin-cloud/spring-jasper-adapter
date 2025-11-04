@@ -37,11 +37,4 @@ public class Invoice extends BaseEntity{
     @OneToMany(mappedBy = "invoice", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<InvoiceItem> items = new ArrayList<>();
 
-    @Transient
-    public BigDecimal getCalculatedTotal() {
-        if (items == null || items.isEmpty()) return BigDecimal.ZERO;
-        return items.stream()
-                .map(InvoiceItem::getSubtotal)
-                .reduce(BigDecimal.ZERO, BigDecimal::add);
-    }
 }
