@@ -1,5 +1,6 @@
 package com.jasper.learn.domain.entity;
 
+import com.jasper.learn.common.entity.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -15,7 +16,7 @@ import java.util.List;
 @Getter
 @Setter
 @Builder
-public class Invoice extends BaseEntity{
+public class Invoice extends BaseEntity {
 
 
     @Column(nullable = false, unique = true, length = 50)

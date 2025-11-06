@@ -1,8 +1,10 @@
-package com.jasper.learn.adapter.repository;
+package com.jasper.learn.adapter.repository.customer;
 
 import com.jasper.learn.domain.entity.Customer;
 import com.jasper.learn.domain.repository.CustomerRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
@@ -24,7 +26,12 @@ public class CustomerRepositoryAdapter implements CustomerRepository {
     }
 
     @Override
-    public void deleteById(Long id) {
-        jpaRepo.deleteById(id);
+    public void deleteCustomer(Customer customer) {
+        jpaRepo.delete(customer);
+    }
+
+    @Override
+    public Page<Customer> findAll(Pageable pageable) {
+        return jpaRepo.findAll(pageable);
     }
 }

@@ -15,7 +15,7 @@ emr/
 │   ├── repository/              # Port untuk data access
 │   └── service/                 # Domain services / business logic
 │
-├── dto/                         # Data Transfer Objects (untuk controller I/O)
+├── api/                         # Data Transfer Objects (untuk controller I/O)
 │   ├── request/
 │   └── response/
 │

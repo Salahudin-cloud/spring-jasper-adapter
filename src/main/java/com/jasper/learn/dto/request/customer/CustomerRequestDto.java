@@ -1,4 +1,4 @@
-package com.jasper.learn.dto.request;
+package com.jasper.learn.dto.request.customer;
 
 import jakarta.validation.constraints.NotBlank;
 import lombok.*;

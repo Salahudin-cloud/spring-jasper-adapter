@@ -1,4 +1,4 @@
-package com.jasper.learn.domain.entity;
+package com.jasper.learn.common.entity;
 
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;

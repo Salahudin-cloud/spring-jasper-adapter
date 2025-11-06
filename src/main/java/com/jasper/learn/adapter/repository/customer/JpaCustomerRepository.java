@@ -1,4 +1,4 @@
-package com.jasper.learn.adapter.repository;
+package com.jasper.learn.adapter.repository.customer;
 
 import com.jasper.learn.domain.entity.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;

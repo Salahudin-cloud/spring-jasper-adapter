@@ -1,5 +1,6 @@
 package com.jasper.learn.domain.entity;
 
+import com.jasper.learn.common.entity.BaseEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -16,7 +17,7 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Setter
-public class Product extends BaseEntity{
+public class Product extends BaseEntity {
 
     @Column(nullable = false, length = 30, unique = true)
     private String code;

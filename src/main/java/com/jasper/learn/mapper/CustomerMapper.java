@@ -1,8 +1,8 @@
 package com.jasper.learn.mapper;
 
 import com.jasper.learn.domain.entity.Customer;
-import com.jasper.learn.dto.request.CustomerRequestDto;
-import com.jasper.learn.dto.request.CustomerUpdateRequestDto;
+import com.jasper.learn.dto.request.customer.CustomerRequestDto;
+import com.jasper.learn.dto.request.customer.CustomerUpdateRequestDto;
 import com.jasper.learn.dto.response.CustomerResponseDto;
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingTarget;

@@ -1,9 +1,8 @@
 package com.jasper.learn.domain.entity;
 
+import com.jasper.learn.common.entity.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
-
-import java.math.BigDecimal;
 
 @Entity
 @Table(name = "invoice_items")
@@ -12,7 +11,7 @@ import java.math.BigDecimal;
 @Getter
 @Setter
 @Builder
-public class InvoiceItem extends BaseEntity{
+public class InvoiceItem extends BaseEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "invoice_id", nullable = false)
