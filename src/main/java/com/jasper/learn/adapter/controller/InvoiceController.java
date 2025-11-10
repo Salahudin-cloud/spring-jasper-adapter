@@ -5,15 +5,14 @@ import com.jasper.learn.common.api.ApiResponse;
 import com.jasper.learn.common.api.ApiResponseFactory;
 import com.jasper.learn.domain.service.InvoiceService;
 import com.jasper.learn.dto.request.invoice.InvoiceRequestDto;
-import com.jasper.learn.dto.request.product.ProductRequestDto;
-import com.jasper.learn.mapper.InvoiceMapper;
+import com.jasper.learn.adapter.mapper.InvoiceMapper;
+import com.jasper.learn.dto.request.invoice.InvoiceUpdateRequestDto;
+import com.jasper.learn.dto.response.InvoiceResponseDto;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/v1/invoices")
@@ -29,5 +28,13 @@ public class InvoiceController {
         return ApiResponseFactory.created("Product created successfully");
     }
 
+    @GetMapping(path = "/{id}")
+    public ResponseEntity<ApiResponse<InvoiceResponseDto>>getById(
+            @PathVariable Long id
+    ){
+        var invoiceItem = invoiceService.getById(id);
+        var response = invoiceMapper.toResponse(invoiceItem);
+        return ApiResponseFactory.success("Successfully get response", response);
+    }
 
 }

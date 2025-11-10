@@ -1,8 +1,10 @@
 package com.jasper.learn.domain.service.impl;
 
 import com.jasper.learn.common.util.ServiceUtils;
+import com.jasper.learn.domain.entity.Customer;
 import com.jasper.learn.domain.entity.Invoice;
 import com.jasper.learn.domain.entity.Product;
+import com.jasper.learn.domain.repository.CustomerRepository;
 import com.jasper.learn.domain.repository.InvoiceRepository;
 import com.jasper.learn.domain.repository.ProductRepository;
 import com.jasper.learn.domain.service.InvoiceService;
@@ -20,10 +22,17 @@ public class InvoiceServiceImpl implements InvoiceService {
 
     private final InvoiceRepository invoiceRepository;
     private final ProductRepository productRepository;
+    private final CustomerRepository customerRepository;
 
     @Override
     @Transactional
     public void create(Invoice invoice) {
+
+        Customer customer = ServiceUtils.orNotFound(
+                customerRepository.findById(invoice.getCustomer().getId()),
+                "Customer not found"
+        );
+        invoice.setCustomer(customer);
 
         invoice.getItems().forEach(item -> {
             Long productId = item.getProduct().getId();

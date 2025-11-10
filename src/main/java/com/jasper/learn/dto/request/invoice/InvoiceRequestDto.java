@@ -5,9 +5,7 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
-import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.List;
 
 @Getter
@@ -16,6 +14,9 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 public class InvoiceRequestDto {
+
+    @NotNull(message = "Customer id cannot be empty")
+    private Long customerId;
 
     @NotBlank(message = "Invoice number cannot be empty")
     private String invoiceNumber;

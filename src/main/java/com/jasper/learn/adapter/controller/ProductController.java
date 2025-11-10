@@ -9,7 +9,7 @@ import com.jasper.learn.domain.service.ProductService;
 import com.jasper.learn.dto.request.product.ProductRequestDto;
 import com.jasper.learn.dto.request.product.ProductUpdateRequestDto;
 import com.jasper.learn.dto.response.ProductResponseDto;
-import com.jasper.learn.mapper.ProductMapper;
+import com.jasper.learn.adapter.mapper.ProductMapper;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;

@@ -1,12 +1,13 @@
-package com.jasper.learn.mapper;
+package com.jasper.learn.adapter.mapper;
 
+import com.jasper.learn.common.mapper.ReferenceMapper;
 import com.jasper.learn.domain.entity.Invoice;
 import com.jasper.learn.dto.request.invoice.InvoiceRequestDto;
 import com.jasper.learn.dto.response.InvoiceResponseDto;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
-@Mapper(componentModel = "spring", uses = {InvoiceItemMapper.class})
+@Mapper(componentModel = "spring", uses = {InvoiceItemMapper.class, ReferenceMapper.class})
 public interface InvoiceMapper {
 
     // Untuk Response (entity -> dto)
@@ -15,8 +16,7 @@ public interface InvoiceMapper {
     @Mapping(target = "phoneNumber", source = "customer.phone")
     InvoiceResponseDto toResponse(Invoice invoice);
 
-    // Untuk Request (dto -> entity)
-    @Mapping(target = "customer", ignore = true) // akan di-set di service
+    @Mapping(target = "customer", source = "customerId")
     @Mapping(target = "items", source = "items")
-    Invoice toEntity(InvoiceRequestDto request);
+    Invoice toEntity(InvoiceRequestDto requestDto);
 }

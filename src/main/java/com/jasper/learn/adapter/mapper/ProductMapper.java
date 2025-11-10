@@ -1,4 +1,4 @@
-package com.jasper.learn.mapper;
+package com.jasper.learn.adapter.mapper;
 
 import com.jasper.learn.domain.entity.Product;
 import com.jasper.learn.dto.request.product.ProductRequestDto;
